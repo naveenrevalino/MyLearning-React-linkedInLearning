@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript">
+
+      // Using variables to create react elements.
+      let welcomeText = React.createElement("h1", null, "Welcome to the landing page.");
+
+      // Make use of the variable as the first argument withinh the ReactDOM.render function.
+      ReactDOM.render(
+        welcomeText,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

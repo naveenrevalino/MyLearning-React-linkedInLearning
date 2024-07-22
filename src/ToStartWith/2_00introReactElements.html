@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+
+    <!-- My Root DIV : where all the react elements will be rendered : the ID should be "root" -->
+    <div id="root"></div>
+
+    <!-- Defining the script language(s) we will be using -->
+    <script type="text/javascript">
+      
+      // React DOM is where all our elements are rendered
+      // It needs two arguments, 1. The element that has to be rendered, 2.The DIV with id root under which it will render the element.
+      ReactDOM.render(
+        React.createElement("h1", null, "Welcome to the landing page."),
+        document.getElementById("root")
+      );
+      
+    </script>
+
+  </body>
+</html>

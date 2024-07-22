@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      // Component 1 as a function : is a javascript function that returns JSX
+      function Header () {
+        return (
+          <div>Header as a function.</div>
+        );
+
+      }
+
+      // Component 2 as a function : is a javascript function that returns JSX
+      function Products () {
+        return (
+          <section>
+            <p> These are the products i have in my inventory. </p>
+          </section>
+        );
+      }
+
+      // Another approac is to use a function called App(), consolidate all your components within and pass App as an argument
+      function App() {
+        return (
+          <div>
+            <Header /> 
+            <Products />
+          </div>
+        );
+      }
+      
+
+      // Passing a function(s) as element(s) within the ReactDOM.render function.
+      // If we are creating just one element then i can simply pass it as a TAG within the ReactDOM.render function
+      // If i want to render multiple component as a function, then i will have to wrap it within a DIV TAG.
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
+
+    </script>
+  </body>
+</html>

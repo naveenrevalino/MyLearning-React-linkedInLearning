@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      // Array of products
+      const arrayOfProducts = ["Pen", "Pencil", "Sticky Notes", "Note Book", "Printer"]
+
+      // Create an object for each product with its respective ID and TITLE
+      const productsObject = arrayOfProducts.map ( (eachProduct, i) => 
+      (
+        {
+          id: i,
+          title: eachProduct
+        }
+      ));
+
+      // Component 1 as a function : is a javascript function that returns JSX
+      function Header ( props ) {
+        return (
+          <section>
+          <img height={300} width={600} src="./pexel.webp" alt="logo" />
+          <div>{ props.headerDescription }</div>
+        </section>
+        );
+
+      }
+
+      // Component 2 as a function : is a javascript function that returns JSX
+      function ProductsSection ( props ) {
+        return (
+          <section>
+            <p> { props.productsSectionTitle } </p>
+          </section>
+        );
+      }
+
+      // Component 3 as a function : is a javascript function that returns JSX
+      // It is a good practice to include keys, when working with list
+      function Products ( props ) {
+        return (
+          <section>
+            <ul>
+              { props.productsObject.map( (eachProductObj) => (<li key={eachProductObj.id}>{ eachProductObj.title }</li>)) }
+            </ul>
+          </section>
+        );
+      }
+
+      // Component 4 as a function : is a javascript function that returns JSX
+      function Footer ( props ) {
+        return (
+          <section>
+            <p>Footer Copy Rights : { props.copyrightYear } </p>
+          </section>
+        );
+      }
+
+      // Wrap all your custom components within App and pass it as the first argument to ReactDOM.render function.
+      function App() {
+        return (
+          <div>
+            <Header headerDescription="Header as a function ...PROPS."/> 
+            <ProductsSection productsSectionTitle="Products available in inventory ...PROPS." />
+            <Products productsObject = { productsObject } />
+            <Footer copyrightYear = {2024} />
+          </div>
+        );
+      }
+      
+
+      // Making use of App() function as the wraper function to render all our custom components ( as a function ).
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      // EXAMPLE : 1 : FOR OBJECT DESTRUCTURING : PROPS OBJECT
+
+      // Component 1 Header : Explaining Destructuring
+      // The PROPS object in this example contains just " headerDescription ".
+      // Instead of accessing headerDescription via PROPS.headerDescription we can also call it as below
+      // { headerDescription }, hence i dont have to use PROS as an argument in the function.
+
+      // So what i am doing here is, accessing the value by its respective KEY.
+      // The more properties the PROPS object has i can use them all by their KEY.
+      function Header ( { headerDescription,  sampleText } ) {
+        return (
+          <section>
+          <img height={300} width={600} src="./pexel.webp" alt="logo" />
+          <div>{ headerDescription } {sampleText}</div>
+        </section>
+        );
+
+      }
+
+      // EXAMPLE : 2 : FOR OBJECT DESTRUCTURING : ARRAY
+      const cities = ["Munnar", "Cochin", "Palla", "Marayoor"];
+
+
+      // Wrap all your custom components within App and pass it as the first argument to ReactDOM.render function.
+      function App() {
+        return (
+          <div>
+            <Header headerDescription="Header as a function ...Object Destructuring." sampleText = "SampleCode"/>
+          </div>
+        );
+      }
+      
+
+      // Making use of App() function as the wraper function to render all our custom components ( as a function ).
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
+
+    </script>
+  </body>
+</html>
